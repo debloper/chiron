@@ -23,25 +23,35 @@
 </head>
 
 <body>
+	<input type="text" id="user" placeholder="BugZilla Username" value="" />
+	<input type="password" id="pass" placeholder="BugZilla Password" value="" />
+	<input type="text" id="mentor" placeholder="Mentor's BugMail" value="" />
+	<button id="trigger">Fetch!</button>
 
 	<!-- Lazy Loadable JS -->
 	<script>
-	bugz = bz.createClient({
-		username: "privileged@username",
-		password: "valid-password"
-	});
-	bugz.searchBugs({
-			summary: "application form",
-			email1: "mentor@email.id",
-			emailassigned_to1: 1,
-			bug_status: ["ASSIGNED","RESOLVED"],
-			product: "Mozilla Reps"
-		}, function (error, bugs) {
-		if (!error) {
-			for (var bug in bugs) {
-				document.body.innerHTML += bugs[bug].summary + "<br />";
+	$("#trigger").click( function (event) {
+		boog = bz.createClient({
+			username: $("#user").val(),
+			password: $("#pass").val()
+		});
+
+		boog.searchBugs({
+				summary: "application form",
+				email1: $("#mentor").val(),
+				emailassigned_to1: 1,
+				bug_status: ["ASSIGNED","RESOLVED"],
+				product: "Mozilla Reps"
+			}, function (error, bugs) {
+				if (!error) {
+					for (var bug in bugs) {
+						document.body.innerHTML += "<br />" +
+						bugs[bug].summary + "<b>[" +
+						(bugs[bug].resolution || bugs[bug].status) + "]</b>";
+					}
+				}
 			}
-		}
+		);
 	});
 	</script>
 
