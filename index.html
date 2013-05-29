@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Page title -->
+	<title>Chiron: track thy mentees...</title>
+
+	<!-- And favicon -->
+	<link rel="icon" type="image/png" href="data:image/png;base64, foobar" />
+
+	<!-- Style sheets -->
+	<link rel="stylesheet" href="style.css" />
+
+	<!-- Lastly, scripts -->
+	<script src="js/jquery.js"></script>
+	<script src="js/bz.js"></script>
+
+</head>
+
+<body>
+
+	<!-- Lazy Loadable JS -->
+	<script>
+	bugz = bz.createClient({
+		username: "privileged@username",
+		password: "valid-password"
+	});
+	bugz.searchBugs({
+			summary: "application form",
+			email1: "mentor@email.id",
+			emailassigned_to1: 1,
+			bug_status: ["ASSIGNED","RESOLVED"],
+			product: "Mozilla Reps"
+		}, function (error, bugs) {
+		if (!error) {
+			for (var bug in bugs) {
+				document.body.innerHTML += bugs[bug].summary + "<br />";
+			}
+		}
+	});
+	</script>
+
+</body>
+
+</html>
