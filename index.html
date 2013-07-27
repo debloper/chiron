@@ -14,7 +14,8 @@
 	<link rel="icon" type="image/png" href="data:image/png;base64, foobar" />
 
 	<!-- Style sheets -->
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link href="http://fonts.googleapis.com/css?family=Armata" rel="stylesheet" />
 
 	<!-- Lastly, scripts -->
 	<script src="js/jquery.js"></script>
@@ -23,13 +24,26 @@
 </head>
 
 <body>
-	<input type="text" id="user" placeholder="BugZilla Username" value="" />
-	<input type="password" id="pass" placeholder="BugZilla Password" value="" />
-	<input type="text" id="mentor" placeholder="Mentor's BugMail" value="" />
-	<button id="trigger">Fetch!</button>
+	<header>
+		<h1>Chiron</h1>
+		<h3>Track Thy Mentee...</h3>
+		<form id="input">
+			<img src="img/remo.png" id="logo" alt="ReMo Logo" />
+			<input type="text" id="user" placeholder="BugZilla Username" value="" />
+			<input type="password" id="pass" placeholder="BugZilla Password" value="" />
+			<input type="text" id="mentor" placeholder="Mentor's BugMail" value="" />
+			<br />
+			<button id="trigger">Fetch!</button>
+		</form>
+	</header>
+	<section id="output"></section>
+	<footer></footer>
 
 	<!-- Lazy Loadable JS -->
 	<script>
+	$("form").click(function (event) {
+		event.preventDefault();
+	});
 	$("#trigger").click( function (event) {
 		boog = bz.createClient({
 			username: $("#user").val(),
@@ -44,11 +58,14 @@
 				product: "Mozilla Reps"
 			}, function (error, bugs) {
 				if (!error) {
+					var node = "";
 					for (var bug in bugs) {
-						document.body.innerHTML += "<br />" +
-						bugs[bug].summary + "<b>[" +
-						(bugs[bug].resolution || bugs[bug].status) + "]</b>";
+						node += "<a href='http://bugzil.la/" + bugs[bug].id + "'>" +
+						bugs[bug].summary.split("Application Form: ")[1] +
+						" <b>[" + (bugs[bug].resolution || bugs[bug].status) +
+						"]</b></a><br />";
 					}
+					$("section").html(node);
 				}
 			}
 		);

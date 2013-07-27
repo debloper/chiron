@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/**
+ * Stylesheet Index:
+ * =================
+ *
+ * 0. Elements
+ * 1. ID & Class
+ * 2. Pseudoclass
+ * 3. Media Queries
+ */
+
+/* 0. Elements */
+* {
+	-moz-box-sizing: order-box;
+	box-sizing: border-box;
+	transition: all 300ms ease;
+}
+html { font-size: 16px; }
+body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	min-width: 320px;
+	color: #333;
+	background-color: #ddd;
+    background: radial-gradient();
+    background-attachment: fixed;
+	font-family: Verdana, Georgia, Helvetica,    /* Desktop  */
+				 "Droid Sans", "Helvetica Neue", /* Mobile   */
+				 Sans-serif;                     /* Fallback */
+	transform: translateZ(0);
+}
+body > * {
+	width: 800px;
+	margin: auto;
+}
+a {
+	outline: 0;
+	text-decoration: none;
+}
+hr {
+	border: 1px solid;
+	border-color: #aaa transparent #fff;
+}
+header {
+	cursor: default;
+    margin: 4rem auto;
+	font-family: Armata;
+    text-align: center;
+	text-shadow: 0 0 1px #999;
+}
+header h1 { font-size: 4rem; }
+header h1, header h3 { margin: 0.25rem auto; }
+header form { margin-top: 4rem; }
+section { text-align: center; }
+footer { margin: 4rem auto; }
+
+/* 1. ID & Class */
+#logo {
+    float: left;
+    margin-right: 2rem;
+}
+#input { text-align: right; }
+#input input {
+    width: 60%;
+    margin: 0.25rem auto;
+    font-size: 2rem;
+    padding: 0.25rem 0.5rem;
+    display: inline-block;
+}
+#input button {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    padding: 0.25rem 2rem;
+    border-radius: 4px;
+    border: 1px solid #069;
+    text-shadow: -1px -1px 0 #048;
+    background: linear-gradient(#69C, #069);
+}
+
+/* 2. Pseudoclass */
+#input button:hover { box-shadow: inset 0 0 0 1px #fff; }
+#input button:active { background: linear-gradient(#069, #69C); }
+
+/* 3. Media Queries */
+@media screen and (max-width: 960px) {
+    body > * { width: 100%; }
+    #logo { float: none; margin-bottom: 4rem; }
+    #input { text-align: center; }
+    #input input {  display: block; }
+    #input button { width: 62%; }
+}
+@media screen and (max-width: 640px) {
+}
+@media screen and (max-width: 512px) {
+}
+@media screen and (max-width: 400px) {
+}
