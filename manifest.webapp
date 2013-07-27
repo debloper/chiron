@@ -1,0 +1,13 @@
+{
+  "name": "Chiron",
+  "description": "Track Thy Mentee...",
+  "launch_path": "index.html",
+  "icons": {
+    "128": "img/icon.png"
+  },
+  "developer": {
+    "name": "Soumya Deb [:Debloper]",
+    "url": "http://debs.io"
+  },
+  "default_locale": "en"
+}
