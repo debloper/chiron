@@ -94,6 +94,13 @@ footer { margin: 4rem auto; }
 /* 2. Pseudoclass */
 #input button:hover { box-shadow: inset 0 0 0 1px #fff; }
 #input button:active { background: linear-gradient(#069, #69C); }
+#input button[disabled] {
+    color: #eee;
+    border-color: #999;
+    text-shadow: 0 0 1px #444;
+    background: linear-gradient(#ccc, #666);
+}
+#input button[disabled]:hover { box-shadow: none; }
 #output .mentee:hover {
     color: #c30;
     background: #eee;

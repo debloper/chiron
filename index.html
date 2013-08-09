@@ -44,6 +44,8 @@
 		event.preventDefault();
 	});
 	$("#trigger").click( function (event) {
+		$("#trigger").attr('disabled','disabled');
+
 		boog = bz.createClient({
 			username: $("#user").val(),
 			password: $("#pass").val()
@@ -65,6 +67,7 @@
 					}
 					$("section").html(node);
 				}
+				$("#trigger").removeAttr('disabled');
 			}
 		);
 	});
