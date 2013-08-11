@@ -64,10 +64,12 @@ footer { margin: 4rem auto; }
 #input { text-align: right; }
 #input input {
     width: 60%;
-    margin: 0.25rem auto;
     font-size: 2rem;
+    margin: 0.25rem auto;
     padding: 0.25rem 0.5rem;
     display: inline-block;
+    border: 1px solid #aaa;
+    border-radius: 4px;
 }
 #input button {
     color: #fff;
@@ -78,16 +80,34 @@ footer { margin: 4rem auto; }
     border: 1px solid #069;
     text-shadow: -1px -1px 0 #048;
     background: linear-gradient(#69C, #069);
+    -moz-box-sizing: order-box;
+    box-sizing: border-box;
+}
+#output .mentee {
+    color: #06c;
+    display: block;
+    padding: 0.5rem 2rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
 }
 
 /* 2. Pseudoclass */
 #input button:hover { box-shadow: inset 0 0 0 1px #fff; }
 #input button:active { background: linear-gradient(#069, #69C); }
+#output .mentee:hover {
+    color: #c30;
+    background: #eee;
+    border-color: #ccc;
+}
 
 /* 3. Media Queries */
 @media screen and (max-width: 960px) {
-    body > * { width: 100%; }
-    #logo { float: none; margin-bottom: 4rem; }
+    body > * { width: calc(100% - 2rem); }
+    #logo {
+        float: none;
+        display: block;
+        margin: auto auto 4rem;
+    }
     #input { text-align: center; }
     #input input {  display: block; }
     #input button { width: 62%; }
