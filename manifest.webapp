@@ -3,7 +3,7 @@
   "description": "Track Thy Mentee...",
   "launch_path": "/chiron/",
   "icons": {
-    "128": "img/icon.png"
+    "128": "http://code.debs.io/chiron/img/icon.png"
   },
   "developer": {
     "name": "Soumya Deb [:Debloper]",
