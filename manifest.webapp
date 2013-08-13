@@ -1,7 +1,7 @@
 {
   "name": "Chiron",
   "description": "Track Thy Mentee...",
-  "launch_path": "index.html",
+  "launch_path": "http://code.debs.io/chiron/",
   "icons": {
     "128": "img/icon.png"
   },
