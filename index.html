@@ -74,9 +74,16 @@
 	});
 
 	var manifest = location.href + "manifest.webapp"
-	,	install = window.navigator.mozApps.install(manifest);
-	install.onsuccess = function () { alert("Installation Successful!"); }
-	install.onerror = function () { alert('Installation Failed. Error: ' + this.error.name); }
+	,	check = navigator.mozApps.checkInstalled(manifest);
+
+	check.onsuccess = function (event) {
+		if (!check.result) {
+			var install = navigator.mozApps.install(manifest);
+			install.onerror = function () {
+				alert('Installation Failed. Error: ' + this.error.name);
+			}
+		}
+	}
 	</script>
 
 </body>
