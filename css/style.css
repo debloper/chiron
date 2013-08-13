@@ -116,12 +116,12 @@ footer { margin: 4rem auto; }
         margin: auto auto 4rem;
     }
     #input { text-align: center; }
-    #input input {  display: block; }
+    #input input { display: block; }
     #input button { width: 62%; }
 }
 @media screen and (max-width: 640px) {
-}
-@media screen and (max-width: 512px) {
+    #input input { font-size: 1.5rem; }
 }
 @media screen and (max-width: 400px) {
+    #input input { font-size: 1rem; }
 }
