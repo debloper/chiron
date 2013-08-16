@@ -32,7 +32,10 @@
 			<img src="img/remo.png" id="logo" alt="ReMo Logo" />
 			<input type="text" id="user" placeholder="BugZilla Username" value="" />
 			<input type="password" id="pass" placeholder="BugZilla Password" value="" />
-			<input type="text" id="mentor" placeholder="Mentor's BugMail" value="" />
+			<input type="text" list="mentors" id="mentor" placeholder="Mentor's BugMail" value="" />
+			<datalist id="mentors">
+				<option value="debloper@gmail.com"></option>
+			</datalist>
 			<button id="trigger">Fetch!</button>
 		</form>
 	</header>
