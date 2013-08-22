@@ -65,7 +65,7 @@
 				if (!error) {
 					var node = "";
 					for (var bug in bugs) {
-						node += "<a class='mentee' href='http://bugzil.la/" +
+						node += "<a class='mentee' target='_blank' href='http://bugzil.la/" +
 						bugs[bug].id + "'>" + bugs[bug].summary.split("Application Form: ")[1] +
 						" <b>[" + (bugs[bug].resolution || bugs[bug].status) + "]</b></a>";
 					}
